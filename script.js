@@ -32,38 +32,25 @@ noBtn.addEventListener("click", () => {
 
 yesBtn.addEventListener("click", () => {
 
-  // 💖 Heart Confetti
-  const duration = 2000;
-  const end = Date.now() + duration;
+  // 💖 HEART CONFETTI
+  confetti({
+    particleCount: 120,
+    spread: 80,
+    origin: { y: 0.6 },
+    shapes: ['heart'],
+    colors: ['#ff4d6d', '#ff758f', '#ffb3c1']
+  });
 
-  (function frame() {
-    confetti({
-      particleCount: 6,
-      angle: 60,
-      spread: 55,
-      origin: { x: 0 },
-      shapes: ['heart'],
-      colors: ['#ff4d6d', '#ff758f', '#ffb3c1']
-    });
-    confetti({
-      particleCount: 6,
-      angle: 120,
-      spread: 55,
-      origin: { x: 1 },
-      shapes: ['heart'],
-      colors: ['#ff4d6d', '#ff758f', '#ffb3c1']
-    });
-    if (Date.now() < end) requestAnimationFrame(frame);
-  })();
-
-  // 💌 Final message
-  document.body.innerHTML = `
-    <div style="text-align:center; margin-top:150px; font-family:Comic Sans MS;">
-      <h1 style="color:#ff4d6d;">Hehehe, I knew it! 💘</h1>
-      <p style="font-size:22px;">
-        You have been making good choices since 23rd March 2025 ;) <br>
-        I love you babyy 💖
-      </p>
-    </div>
-  `;
+  // ⏳ Wait so confetti is visible
+  setTimeout(() => {
+    document.body.innerHTML = `
+      <div style="text-align:center; margin-top:150px; font-family:Comic Sans MS;">
+        <h1 style="color:#ff4d6d;">Hehehe, I knew it! 💘</h1>
+        <p style="font-size:22px;">
+          You have been making good choices since 23rd March 2025 ;) <br>
+          I love you babyy 💖
+        </p>
+      </div>
+    `;
+  }, 700);
 });
