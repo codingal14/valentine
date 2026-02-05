@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  font-family: 'Comic Sans MS', cursive;
+  background: #fff0f6;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.center-image {
+  width: 220px;
+  margin: 20px 0;
+}
+
+h1 {
+  color: #ff4d6d;
+}
+
+#message-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 40px;
+}
+
+#message {
+  font-size: 22px;
+  color: #6a0572;
+}
+
+#angryGif {
+  width: 60px;
+  display: none;
+}
+
+.buttons {
+  margin-top: 30px;
+}
+
+button {
+  font-size: 20px;
+  padding: 15px 35px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#yesBtn {
+  background-color: #b7e4c7;
+}
+
+#noBtn {
+  background-color: #ffccd5;
+  margin-left: 20px;
+}
+
+.side-image {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 220px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.left { left: 20px; }
+.right { right: 20px; }
+
+.side-image img {
+  width: 100%;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+/* POP animation */
+@keyframes popIn {
+  0% { transform: scale(0); opacity: 0; }
+  70% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+.pop {
+  animation: popIn 0.4s ease-out;
+}
